@@ -65,7 +65,14 @@ npm run dev
 
 ## 📸 Capturas de pantalla
 
-> *(Podés agregar tus capturas luego acá)*
+### Vista de inicio de sesión
+![Login](assets/CuentiApp1.png)
+
+### Pantalla de categorías
+![Categorías](assets/CuentiApp2.png)
+
+### Estadísticas mensuales
+![Estadísticas](assets/CuentiApp3.png)
 
 ---
 
