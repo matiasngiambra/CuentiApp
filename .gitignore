@@ -1,0 +1,20 @@
+# General
+node_modules/
+.env
+dist/
+build/
+*.log
+*.local
+
+# Editor/IDE
+.vscode/
+.idea
+.DS_Store
+
+# Backend específico
+coverage/
+*.test.js
+
+# Frontend específico (Vite/React)
+*.lock
+*.cache
