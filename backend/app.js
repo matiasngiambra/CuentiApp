@@ -10,7 +10,7 @@ const app = express();
 
 // Middleware CORS
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: ['http://localhost:5173', 'https://cuenti-app.vercel.app'],
   credentials: true
 }));
 
