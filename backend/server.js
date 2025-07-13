@@ -3,6 +3,7 @@ import { conectarDB } from './config/db.js';
 import app from './app.js';
 
 dotenv.config();
+console.log('MONGODB_URI:', process.env.MONGODB_URI); // <-- Línea para testear
 
 // Conectar a MongoDB
 conectarDB();
