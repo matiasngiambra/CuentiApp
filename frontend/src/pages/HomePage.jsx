@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import Layout from '../components/MainLayout';
 import { Dialog, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
+const API_URL = import.meta.env.VITE_API_URL;
 
 const HomePage = () => {
     const [cuentas, setCuentas] = useState([]);
@@ -24,7 +25,7 @@ const HomePage = () => {
 
     const fetchCuentas = async () => {
         try {
-            const res = await fetch('http://localhost:5000/api/cuentas', {
+            const res = await fetch(`${API_URL}/cuentas`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -45,7 +46,7 @@ const HomePage = () => {
 
     const fetchCategorias = async () => {
         try {
-            const res = await fetch('http://localhost:5000/api/categorias', {
+            const res = await fetch(`${API_URL}/categorias`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -59,7 +60,7 @@ const HomePage = () => {
 
     const fetchTotalesCategoria = async () => {
         try {
-            const res = await fetch('http://localhost:5000/api/gastos/totales-por-categoria', {
+            const res = await fetch(`${API_URL}/gastos/totales-por-categoria`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             const data = await res.json();
@@ -97,7 +98,7 @@ const HomePage = () => {
         }
 
         try {
-            const res = await fetch('http://localhost:5000/api/gastos', {
+            const res = await fetch(`${API_URL}/gastos`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
