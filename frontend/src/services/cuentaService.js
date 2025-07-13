@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/api/cuentas';
+const API_URL = 'https://cuentiapp.onrender.com/api/cuentas';
 
 export const getCuentas = async (token) => {
   const res = await fetch(API_URL, {

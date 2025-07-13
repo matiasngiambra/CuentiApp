@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/api/categorias';
+const API_URL = 'https://cuentiapp.onrender.com/api/categorias';
 
 export const getCategorias = async (token) => {
   const res = await fetch(API_URL, {

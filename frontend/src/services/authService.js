@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/api/auth';
+const API_URL = 'https://cuentiapp.onrender.com/api/auth';
 
 export const login = async (email, password) => {
   const res = await fetch(`${API_URL}/login`, {
