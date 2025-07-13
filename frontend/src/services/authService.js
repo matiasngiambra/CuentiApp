@@ -9,7 +9,6 @@ export const login = async (email, password) => {
   });
 
   const data = await res.json();
-  console.log('Respuesta del login:', data);
 
   if (!res.ok) throw new Error(data.mensaje || 'Error al iniciar sesión');
 

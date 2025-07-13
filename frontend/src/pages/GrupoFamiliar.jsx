@@ -45,7 +45,6 @@ function GrupoFamiliar() {
         setNombreGrupo(data[0]?.grupoFamiliarId?.nombre || '');
 
         const actual = data.find((m) => String(m._id) === String(usuario?.id));
-        console.log('Admin detectado:', actual?.nombre, actual?.esAdminGrupo); // ← DEBUG
         setEsAdmin(actual?.esAdminGrupo || false);
 
       })

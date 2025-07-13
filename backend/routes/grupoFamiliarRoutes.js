@@ -10,7 +10,6 @@ router.post('/', protegerRuta, crearGrupoFamiliar);
 
 router.get('/miembros', protegerRuta, obtenerMiembrosGrupo);
 
-// Ruta para invitar usuarios al grupo (solo admin)
 router.post('/invitar', protegerRuta, async (req, res) => {
   try {
     const admin = await Usuario.findById(req.usuario._id);
@@ -44,8 +43,6 @@ router.post('/invitar', protegerRuta, async (req, res) => {
   }
 });
 
-
-// Eliminar grupo (solo admin)
 router.delete('/', protegerRuta, async (req, res) => {
   try {
     const usuario = await Usuario.findById(req.usuario._id);
@@ -74,7 +71,6 @@ router.delete('/', protegerRuta, async (req, res) => {
   }
 });
 
-// Eliminar miembro del grupo (solo admin)
 router.delete('/miembros/:id', protegerRuta, async (req, res) => {
   const { id } = req.params;
 
