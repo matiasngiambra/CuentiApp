@@ -9,6 +9,8 @@ const generarToken = (id) => {
 };
 
 export const registrarUsuario = async (req, res) => {
+  console.log('Body recibido en /register:', req.body);
+
   const { nombre, email, password } = req.body;
 
   try {
@@ -71,7 +73,8 @@ export const registrarUsuario = async (req, res) => {
       token: generarToken(nuevoUsuario._id),
     });
   } catch (error) {
-    console.error('Error al registrar usuario:', error);
+    console.error('Error al registrar usuario:', error.message, error.stack);
+    res.status(500).json({ mensaje: 'Error en el registro', error: error.message });
 
     if (error.name === 'ValidationError') {
       return res.status(400).json({
