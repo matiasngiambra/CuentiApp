@@ -15,10 +15,20 @@ function App() {
   const [token, setToken] = useState(localStorage.getItem('token'));
 
   useEffect(() => {
+    const rawToken = localStorage.getItem('token');
+
+    // Si el token es nulo, "undefined" o inválido, lo eliminamos
+    if (!rawToken || rawToken === 'undefined' || rawToken === 'null') {
+      localStorage.removeItem('token');
+      localStorage.removeItem('usuario'); // si también guardás el usuario
+      setToken(null);
+    }
+
     const syncToken = () => {
       const updatedToken = localStorage.getItem('token');
       setToken(updatedToken);
     };
+
     window.addEventListener('storage', syncToken);
     return () => window.removeEventListener('storage', syncToken);
   }, []);
